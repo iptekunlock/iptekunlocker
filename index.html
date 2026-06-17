@@ -307,10 +307,6 @@ bg-white dark:bg-black z-[9999] transition-opacity duration-700">
   setTimeout(showBubble, 2000);
 </script> 
 
-<footer class="text-center py-6 mt-10 border-t border-gray-300 dark:border-gray-700 text-sm text-gray-600 dark:text-gray-400">
-  © 2026. All rights reserved By <span class="font-semibold">PREN CELL</span>
-</footer>
-
 <script>
   document.documentElement.classList.add('dark');
 </script>
@@ -322,15 +318,27 @@ bg-white dark:bg-black z-[9999] transition-opacity duration-700">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trustpilot Button</title>
+    <title>Trustpilot Button - Flexbox</title>
     <style>
+        /* CONTAINER UNTUK MENGATUR POSISI */
+        .button-container {
+            display: flex;
+            margin-top: 20px; /* Jarak dari elemen di atasnya */
+            
+            /* SILAKAN PILIH SALAH SATU POSISI DI BAWAH INI: */
+            justify-content: center;     /* <--- Tombol di TENGAH */
+            /* justify-content: flex-start;  <--- Aktifkan ini jika ingin di KIRI */
+            /* justify-content: flex-end;    <--- Aktifkan ini jika ingin di KANAN */
+        }
+
+        /* STYLING TOMBOL */
         .trustpilot-btn {
             display: inline-flex;
-            align-items: center;
+            align-items: center; /* Membuat teks & bintang sejajar sempurna secara vertikal */
             gap: 8px;
-            padding: 10spx 20px;
+            padding: 10px 20px; /* Memperbaiki typo 10spx menjadi 10px */
             background-color: #ffffff;
-            border: 2px solid #00b67a; /* Warna hijau khas Trustpilot */
+            border: 2px solid #00b67a; 
             border-radius: 4px;
             text-decoration: none;
             color: #000000;
@@ -338,9 +346,6 @@ bg-white dark:bg-black z-[9999] transition-opacity duration-700">
             font-weight: bold;
             font-size: 16px;
             transition: all 0.2s ease;
-
-            /* INI YANG DIRUBAH/DITAMBAHKAN */
-            margin-top: 20px; 
         }
 
         .trustpilot-btn:hover {
@@ -348,7 +353,6 @@ bg-white dark:bg-black z-[9999] transition-opacity duration-700">
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        /* Styling untuk logo bintang hijau */
         .tp-star {
             color: #00b67a;
             font-size: 20px;
@@ -358,9 +362,15 @@ bg-white dark:bg-black z-[9999] transition-opacity duration-700">
 </head>
 <body>
 
-    <a href="https://www.trustpilot.com/review/pren.store" target="_blank" class="trustpilot-btn">
-        Review us on <span class="tp-star">★</span>Trustpilot
-    </a>
+    <div class="button-container">
+        <a href="https://www.trustpilot.com/review/pren.store" target="_blank" class="trustpilot-btn">
+            Review us on <span class="tp-star">★</span>Trustpilot
+        </a>
+    </div>
 
 </body>
 </html>
+
+<footer class="text-center py-6 mt-10 border-t border-gray-300 dark:border-gray-700 text-sm text-gray-600 dark:text-gray-400">
+  © 2026. All rights reserved By <span class="font-semibold">PREN CELL</span>
+</footer>
