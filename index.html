@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PREN CELL</title>
+  <meta name="description" content="Download tools iPhone & Android terbaik">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -11,178 +12,303 @@
   </script>
 </head>
 
-<body class="min-h-screen bg-gradient-to-br 
-from-slate-100 via-gray-100 to-slate-200 
-dark:from-gray-950 dark:via-gray-900 dark:to-black 
+<body class="min-h-screen bg-gradient-to-br
+from-slate-100 via-gray-100 to-slate-200
+dark:from-gray-950 dark:via-gray-900 dark:to-black
 transition-colors duration-500">
 
 <!-- LOADING SCREEN -->
-<div id="loader" class="fixed inset-0 flex items-center justify-center 
+<div id="loader" class="fixed inset-0 flex items-center justify-center
 bg-white dark:bg-black z-[9999] transition-opacity duration-700">
-
   <div class="flex flex-col items-center gap-4">
-
-    <!-- Logo / Icon -->
-    <div class="w-12 h-12 border-4 border-blue-500 border-t-transparent 
+    <div class="w-12 h-12 border-4 border-blue-500 border-t-transparent
     rounded-full animate-spin"></div>
-
-    <!-- Text -->
     <p class="text-gray-700 dark:text-gray-300 text-sm tracking-wide">
       Loading PREN CELL...
     </p>
-
   </div>
 </div>
 
-<script>
-  window.addEventListener('load', () => {
-    const loader = document.getElementById('loader');
+<!-- Glow -->
+<div class="absolute inset-0 -z-10 blur-3xl opacity-30
+bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500"></div>
 
-    setTimeout(() => {
-      loader.classList.add('opacity-0');
+<div class="flex-grow">
+<div class="max-w-6xl mx-auto p-6">
 
-      setTimeout(() => {
-        loader.style.display = 'none';
-      }, 700);
+  <!-- Header -->
+  <div class="flex justify-between items-center mb-6">
+    <h1 class="text-3xl font-bold flex items-center gap-3 text-gray-800 dark:text-white">
+      <div class="flex items-center gap-2">
+        <!-- Android -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-green-500" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.6 9.48l1.43-2.49a.5.5 0 10-.87-.5l-1.46 2.54A8.02 8.02 0 0012 8c-1.66 0-3.2.5-4.48 1.35L6.06 6.5a.5.5 0 10-.87.5l1.43 2.49A7.97 7.97 0 004 14v5a1 1 0 001 1h1v-6h1v6h2v-6h2v6h2v-6h2v6h2v-6h1v6h1a1 1 0 001-1v-5c0-1.9-.66-3.64-1.74-5.02z"/>
+        </svg>
+        <!-- Apple -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-gray-800 dark:text-white" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M16.37 1.43c0 1.14-.42 2.19-1.12 2.97-.77.86-2.03 1.52-3.15 1.43-.14-1.1.42-2.23 1.12-3 .77-.86 2.1-1.48 3.15-1.4zM21 17.3c-.58 1.36-.85 1.97-1.6 3.1-1.04 1.56-2.5 3.5-4.3 3.52-1.6.02-2.01-1.04-4.19-1.03-2.18.01-2.63 1.05-4.23 1.03-1.8-.02-3.17-1.77-4.21-3.33C.68 17.1-.7 12.1 1.22 8.72c1.35-2.35 3.78-3.84 6.39-3.86 1.69-.02 3.29 1.14 4.19 1.14.9 0 2.84-1.41 4.79-1.2.82.03 3.12.33 4.6 2.49-.12.08-2.75 1.6-2.72 4.78.03 3.8 3.34 5.06 3.38 5.07z"/>
+        </svg>
+      </div>
+      <span class="bg-gradient-to-r from-blue-600 to-purple-500 bg-clip-text text-transparent">
+        PREN CELL
+      </span>
+    </h1>
 
-    }, 800); // durasi loading (bisa diubah)
-  });
-</script>
-
-  <!-- Glow -->
-  <div class="absolute inset-0 -z-10 blur-3xl opacity-30 
-  bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500"></div>
-
-  <div class="flex-grow">
-  <div class="max-w-6xl mx-auto p-6">
-
-    <!-- Header -->
-    <div class="flex justify-between items-center mb-6">
-      <h1 class="text-3xl font-bold flex items-center gap-3 text-gray-800 dark:text-white">
-        <div class="flex items-center gap-2">
-          
-          <!-- Android -->
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-green-500" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.6 9.48l1.43-2.49a.5.5 0 10-.87-.5l-1.46 2.54A8.02 8.02 0 0012 8c-1.66 0-3.2.5-4.48 1.35L6.06 6.5a.5.5 0 10-.87.5l1.43 2.49A7.97 7.97 0 004 14v5a1 1 0 001 1h1v-6h1v6h2v-6h2v6h2v-6h2v6h2v-6h1v6h1a1 1 0 001-1v-5c0-1.9-.66-3.64-1.74-5.02z"/>
-          </svg>
-
-          <!-- Apple -->
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-gray-800 dark:text-white" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M16.37 1.43c0 1.14-.42 2.19-1.12 2.97-.77.86-2.03 1.52-3.15 1.43-.14-1.1.42-2.23 1.12-3 .77-.86 2.1-1.48 3.15-1.4zM21 17.3c-.58 1.36-.85 1.97-1.6 3.1-1.04 1.56-2.5 3.5-4.3 3.52-1.6.02-2.01-1.04-4.19-1.03-2.18.01-2.63 1.05-4.23 1.03-1.8-.02-3.17-1.77-4.21-3.33C.68 17.1-.7 12.1 1.22 8.72c1.35-2.35 3.78-3.84 6.39-3.86 1.69-.02 3.29 1.14 4.19 1.14.9 0 2.84-1.41 4.79-1.2.82.03 3.12.33 4.6 2.49-.12.08-2.75 1.6-2.72 4.78.03 3.8 3.34 5.06 3.38 5.07z"/>
-          </svg>
-        </div>
-       <span class="bg-gradient-to-r from-blue-600 to-purple-500 bg-clip-text text-transparent">
-  PREN CELL
-</span>
-      </h1>
+    <div class="flex items-center gap-3">
+      <!-- LOGIN BUTTON -->
+      <button onclick="openLogin()"
+        class="flex items-center gap-2 px-4 py-2 rounded-xl
+        bg-white/70 dark:bg-gray-800/70 backdrop-blur-md
+        border border-gray-300 dark:border-gray-700
+        text-sm font-medium text-gray-800 dark:text-white
+        hover:bg-white dark:hover:bg-gray-700 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13 16l4-4m0 0l-4-4m4 4H7m6 8a8 8 0 110-16 8 8 0 010 16z"/>
+        </svg>
+        Masuk
+      </button>
 
       <!-- TOGGLE -->
-      <button onclick="toggleDark()" 
+      <button onclick="toggleDark()"
         class="p-2 rounded-xl bg-white/70 dark:bg-gray-800/70 backdrop-blur-md transition">
-
-        <!-- Moon -->
-        <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" 
-          class="w-6 h-6 text-gray-800 transition-transform duration-500" 
+        <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg"
+          class="w-6 h-6 text-gray-800 transition-transform duration-500"
           fill="currentColor" viewBox="0 0 24 24">
           <path d="M21.75 15.5A9 9 0 1112.5 2.25a7 7 0 109.25 13.25z"/>
         </svg>
-
-        <!-- Sun -->
-        <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" 
-          class="w-6 h-6 text-green-400 hidden transition-transform duration-500" 
+        <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg"
+          class="w-6 h-6 text-green-400 hidden transition-transform duration-500"
           fill="currentColor" viewBox="0 0 24 24">
           <path d="M12 18a6 6 0 100-12 6 6 0 000 12zm0 4v1m0-22v1m11 11h-1M2 12H1m16.95 4.95l-.7-.7M6.34 6.34l-.7-.7m12.02 0l-.7.7M6.34 17.66l-.7.7"/>
         </svg>
-
       </button>
-    </div>
-
-    <!-- Search -->
-    <input id="search" type="text" placeholder="Cari software..." 
-      class="w-full mb-6 p-3 rounded-xl shadow-sm
-      bg-white/70 dark:bg-gray-800/70
-      backdrop-blur-md
-      border border-gray-300 dark:border-gray-700
-      text-gray-800 dark:text-white
-      focus:ring-2 focus:ring-blue-500 outline-none"
-      onkeyup="filterSoftware()">
-
-    <!-- Grid -->
-    <div id="softwareList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-      <!-- (SEMUA CARD KAMU TETAP, TIDAK DIUBAH) -->
-
-       <!-- Card -->
-      <div class="software-card bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-white/20 dark:border-gray-700 p-5 rounded-2xl shadow-lg hover:shadow-2xl transition">
-        <h2 class="text-xl font-semibold text-gray-800 dark:text-white">UNLOCK TOOL</h2>
-        <p class="text-gray-600 dark:text-gray-300 mb-2">Iphone & Android</p>
-        <span class="text-xs bg-green-100 dark:bg-green-700 text-green-700 dark:text-white px-2 py-1 rounded">All Device</span>
-        <div class="mt-4">
-          <a href="https://file.unlocktool.net/" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl transition">Download</a>
-                    <a href="https://wa.me/6285218280685" target="_blank" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-xl transition">RENT ACCOUNT</a>
-
-        </div>
-      </div>
-
-      <div class="software-card bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-white/20 dark:border-gray-700 p-5 rounded-2xl shadow-lg hover:shadow-2xl transition">
-        <h2 class="text-xl font-semibold text-gray-800 dark:text-white">HFZ ACTIVATOR</h2>
-        <p class="text-gray-600 dark:text-gray-300 mb-2">Iphone</p>
-        <span class="text-xs bg-gray-200 dark:bg-green-700 px-2 py-1 rounded">iOS</span>
-        <div class="mt-4">
-          <a href="https://mega.nz/folder/JBEQSBaK#P-MMA1LGZergdz2-3vec6A" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl transition">Download</a>
-          <a href="https://wa.me/6285218280685" target="_blank" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-xl transition">Register SN</a>
-        </div>
-      </div>
-
-      <div class="software-card bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-white/20 dark:border-gray-700 p-5 rounded-2xl shadow-lg hover:shadow-2xl transition">
-        <h2 class="text-xl font-semibold text-gray-800 dark:text-white">IREMOVAL PRO</h2>
-        <p class="text-gray-600 dark:text-gray-300 mb-2">Iphone</p>
-        <span class="text-xs bg-gray-200 dark:bg-green-700 px-2 py-1 rounded">iOS</span>
-        <div class="mt-4">
-          <a href="https://iremovalpro.com/" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl transition">Download</a>
-          <a href="https://wa.me/6285218280685" target="_blank" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-xl transition">Register SN</a>
-        </div>
-      </div>
-
-      <div class="software-card bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-white/20 dark:border-gray-700 p-5 rounded-2xl shadow-lg hover:shadow-2xl transition">
-        <h2 class="text-xl font-semibold text-gray-800 dark:text-white">IDEVICE PRO A12</h2>
-        <p class="text-gray-600 dark:text-gray-300 mb-2">Iphone</p>
-        <span class="text-xs bg-gray-200 dark:bg-green-700 px-2 py-1 rounded">iOS</span>
-        <div class="mt-4">
-          <a href="https://www.idevicepro.ru/" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl transition">Download</a>
-          <a href="https://wa.me/6285218280685" target="_blank" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-xl transition">Register SN</a>
-        </div>
-      </div>
-
-      <div class="software-card bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-white/20 dark:border-gray-700 p-5 rounded-2xl shadow-lg hover:shadow-2xl transition">
-        <h2 class="text-xl font-semibold text-gray-800 dark:text-white">IAPRO TOOL</h2>
-        <p class="text-gray-600 dark:text-gray-300 mb-2">Iphone</p>
-        <span class="text-xs bg-gray-200 dark:bg-green-700 px-2 py-1 rounded">iOS</span>
-        <div class="mt-4">
-          <a href="https://iap.tools/" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl transition">Download</a>
-          <a href="https://wa.me/6285218280685" target="_blank" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-xl transition">Register SN</a>
-        </div>
-      </div>
-
-      <div class="software-card bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-white/20 dark:border-gray-700 p-5 rounded-2xl shadow-lg hover:shadow-2xl transition">
-        <h2 class="text-xl font-semibold text-gray-800 dark:text-white">OTIX TOOL</h2>
-        <p class="text-gray-600 dark:text-gray-300 mb-2">Iphone</p>
-        <span class="text-xs bg-gray-200 dark:bg-green-700 px-2 py-1 rounded">iOS</span>
-        <div class="mt-4">
-          <a href="https://www.otix.tools/download/" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl transition">Download</a>
-          <a href="https://wa.me/6285218280685" target="_blank" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-xl transition">Register SN</a>
-        </div>
-      </div>
-
     </div>
   </div>
 
+  <!-- Search -->
+  <input id="search" type="text" placeholder="Cari software..."
+    class="w-full mb-6 p-3 rounded-xl shadow-sm
+    bg-white/70 dark:bg-gray-800/70
+    backdrop-blur-md
+    border border-gray-300 dark:border-gray-700
+    text-gray-800 dark:text-white
+    focus:ring-2 focus:ring-blue-500 outline-none"
+    onkeyup="filterSoftware()">
 
-      <script>
+  <!-- Grid -->
+  <div id="softwareList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <div class="software-card bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-white/20 dark:border-gray-700 p-5 rounded-2xl shadow-lg hover:shadow-2xl transition">
+      <h2 class="text-xl font-semibold text-gray-800 dark:text-white">UNLOCK TOOL</h2>
+      <p class="text-gray-600 dark:text-gray-300 mb-2">Iphone & Android</p>
+      <span class="text-xs bg-green-100 dark:bg-green-700 text-green-700 dark:text-white px-2 py-1 rounded">All Device</span>
+      <div class="mt-4">
+        <a href="https://file.unlocktool.net/" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl transition">Download</a>
+        <a href="https://wa.me/6285218280685" target="_blank" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-xl transition">RENT ACCOUNT</a>
+      </div>
+    </div>
+
+    <div class="software-card bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-white/20 dark:border-gray-700 p-5 rounded-2xl shadow-lg hover:shadow-2xl transition">
+      <h2 class="text-xl font-semibold text-gray-800 dark:text-white">HFZ ACTIVATOR</h2>
+      <p class="text-gray-600 dark:text-gray-300 mb-2">Iphone</p>
+      <span class="text-xs bg-gray-200 dark:bg-green-700 px-2 py-1 rounded">iOS</span>
+      <div class="mt-4">
+        <a href="https://mega.nz/folder/JBEQSBaK#P-MMA1LGZergdz2-3vec6A" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl transition">Download</a>
+        <a href="https://wa.me/6285218280685" target="_blank" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-xl transition">Register SN</a>
+      </div>
+    </div>
+
+    <div class="software-card bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-white/20 dark:border-gray-700 p-5 rounded-2xl shadow-lg hover:shadow-2xl transition">
+      <h2 class="text-xl font-semibold text-gray-800 dark:text-white">IREMOVAL PRO</h2>
+      <p class="text-gray-600 dark:text-gray-300 mb-2">Iphone</p>
+      <span class="text-xs bg-gray-200 dark:bg-green-700 px-2 py-1 rounded">iOS</span>
+      <div class="mt-4">
+        <a href="https://iremovalpro.com/" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl transition">Download</a>
+        <a href="https://wa.me/6285218280685" target="_blank" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-xl transition">Register SN</a>
+      </div>
+    </div>
+
+    <div class="software-card bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-white/20 dark:border-gray-700 p-5 rounded-2xl shadow-lg hover:shadow-2xl transition">
+      <h2 class="text-xl font-semibold text-gray-800 dark:text-white">IDEVICE PRO A12</h2>
+      <p class="text-gray-600 dark:text-gray-300 mb-2">Iphone</p>
+      <span class="text-xs bg-gray-200 dark:bg-green-700 px-2 py-1 rounded">iOS</span>
+      <div class="mt-4">
+        <a href="https://www.idevicepro.ru/" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl transition">Download</a>
+        <a href="https://wa.me/6285218280685" target="_blank" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-xl transition">Register SN</a>
+      </div>
+    </div>
+
+    <div class="software-card bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-white/20 dark:border-gray-700 p-5 rounded-2xl shadow-lg hover:shadow-2xl transition">
+      <h2 class="text-xl font-semibold text-gray-800 dark:text-white">IAPRO TOOL</h2>
+      <p class="text-gray-600 dark:text-gray-300 mb-2">Iphone</p>
+      <span class="text-xs bg-gray-200 dark:bg-green-700 px-2 py-1 rounded">iOS</span>
+      <div class="mt-4">
+        <a href="https://iap.tools/" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl transition">Download</a>
+        <a href="https://wa.me/6285218280685" target="_blank" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-xl transition">Register SN</a>
+      </div>
+    </div>
+
+    <div class="software-card bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-white/20 dark:border-gray-700 p-5 rounded-2xl shadow-lg hover:shadow-2xl transition">
+      <h2 class="text-xl font-semibold text-gray-800 dark:text-white">OTIX TOOL</h2>
+      <p class="text-gray-600 dark:text-gray-300 mb-2">Iphone</p>
+      <span class="text-xs bg-gray-200 dark:bg-green-700 px-2 py-1 rounded">iOS</span>
+      <div class="mt-4">
+        <a href="https://www.otix.tools/download/" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl transition">Download</a>
+        <a href="https://wa.me/6285218280685" target="_blank" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-xl transition">Register SN</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Trustpilot -->
+  <div class="flex justify-center mt-8">
+    <a href="https://www.trustpilot.com/review/pren.store" target="_blank"
+      class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl
+      bg-white dark:bg-gray-800 border-2 border-[#00b67a]
+      text-gray-800 dark:text-white font-bold text-sm
+      hover:shadow-md transition">
+      Review us on <span class="text-[#00b67a] text-lg leading-none">★</span>Trustpilot
+    </a>
+  </div>
+
+</div>
+</div>
+
+<!-- ============ LOGIN MODAL ============ -->
+<div id="loginOverlay"
+  class="fixed inset-0 z-[200] flex items-center justify-center p-4
+  bg-black/50 backdrop-blur-sm
+  opacity-0 pointer-events-none transition-opacity duration-300">
+
+  <div id="loginCard"
+    class="w-full max-w-sm bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl
+    border border-white/20 dark:border-gray-700
+    rounded-2xl shadow-2xl p-7
+    scale-95 opacity-0 transition-all duration-300">
+
+    <div class="flex items-center justify-between mb-1">
+      <h2 class="text-xl font-bold text-gray-800 dark:text-white">Masuk ke Akun</h2>
+      <button onclick="closeLogin()" class="text-gray-400 hover:text-gray-700 dark:hover:text-white transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <p class="text-sm text-gray-500 dark:text-gray-400 mb-6">Akses khusus member PREN CELL.</p>
+
+    <form id="loginForm" novalidate class="space-y-4">
+      <div>
+        <label class="block text-xs font-semibold uppercase tracking-wide text-gray-600 dark:text-gray-300 mb-1.5" for="loginEmail">Email</label>
+        <input id="loginEmail" type="email" placeholder="nama@email.com" autocomplete="email"
+          class="w-full px-3.5 py-2.5 rounded-xl text-sm
+          bg-white dark:bg-gray-800
+          border border-gray-300 dark:border-gray-700
+          text-gray-800 dark:text-white
+          focus:ring-2 focus:ring-blue-500 outline-none transition">
+        <p class="error-msg hidden text-xs text-red-500 mt-1">Masukkan email yang valid.</p>
+      </div>
+
+      <div>
+        <label class="block text-xs font-semibold uppercase tracking-wide text-gray-600 dark:text-gray-300 mb-1.5" for="loginPassword">Kata Sandi</label>
+        <input id="loginPassword" type="password" placeholder="••••••••" autocomplete="current-password"
+          class="w-full px-3.5 py-2.5 rounded-xl text-sm
+          bg-white dark:bg-gray-800
+          border border-gray-300 dark:border-gray-700
+          text-gray-800 dark:text-white
+          focus:ring-2 focus:ring-blue-500 outline-none transition">
+        <p class="error-msg hidden text-xs text-red-500 mt-1">Kata sandi minimal 6 karakter.</p>
+      </div>
+
+      <div class="flex items-center justify-between text-xs">
+        <label class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
+          <input type="checkbox" class="accent-blue-600">
+          Ingat saya
+        </label>
+        <a href="#" class="text-blue-600 dark:text-blue-400 hover:underline">Lupa sandi?</a>
+      </div>
+
+      <button type="submit"
+        class="w-full py-2.5 rounded-xl text-sm font-semibold text-white
+        bg-gradient-to-r from-blue-600 to-purple-500
+        hover:opacity-90 transition">
+        Masuk
+      </button>
+
+      <p id="loginStatus" class="text-xs text-center min-h-[16px] text-gray-500 dark:text-gray-400"></p>
+    </form>
+
+    <div class="flex items-center gap-3 my-5 text-[11px] uppercase tracking-wider text-gray-400">
+      <div class="flex-1 h-px bg-gray-200 dark:bg-gray-700"></div>
+      atau
+      <div class="flex-1 h-px bg-gray-200 dark:bg-gray-700"></div>
+    </div>
+
+    <a href="https://wa.me/6285218280685" target="_blank"
+      class="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-sm font-medium
+      bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700
+      text-gray-700 dark:text-gray-200
+      hover:bg-gray-50 dark:hover:bg-gray-700 transition">
+      📱 Hubungi Admin via WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- FLOAT BUTTON -->
+<button onclick="toggleContact()"
+  class="fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg z-50 transition transform hover:scale-110 active:scale-95">
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M21 15a4 4 0 01-4 4H7l-4 4V7a4 4 0 014-4h10a4 4 0 014 4z"/>
+  </svg>
+</button>
+
+<!-- CHAT BUBBLE -->
+<div id="chatBubble"
+  class="fixed bottom-24 right-6 bg-white dark:bg-gray-800
+  text-gray-800 dark:text-white
+  px-4 py-2 rounded-xl shadow-lg z-50
+  opacity-0 translate-y-3 pointer-events-none
+  transition-all duration-300">
+  <div class="flex items-center gap-2">
+    <span>Butuh bantuan? 💬</span>
+    <button onclick="closeBubble()" class="text-sm opacity-60 hover:opacity-100">✖</button>
+  </div>
+</div>
+
+<!-- CONTACT PANEL -->
+<div id="contactPanel"
+  class="fixed bottom-24 right-6 w-72
+  bg-white dark:bg-gray-800
+  rounded-2xl shadow-xl p-4 z-50
+  opacity-0 translate-y-5 scale-95 pointer-events-none
+  transition-all duration-300 ease-out">
+  <h2 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white">
+    Hubungi Admin
+  </h2>
+  <a href="https://wa.me/6285218280685" target="_blank"
+    class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+    <span class="text-green-500 text-xl">📱</span>
+    <span>WhatsApp</span>
+  </a>
+</div>
+
+<footer class="text-center py-6 mt-10 border-t border-gray-300 dark:border-gray-700 text-sm text-gray-600 dark:text-gray-400">
+  © 2026. All rights reserved By <span class="font-semibold">PREN CELL</span>
+</footer>
+
+<script>
+  // ---- Loader ----
+  window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    setTimeout(() => {
+      loader.classList.add('opacity-0');
+      setTimeout(() => { loader.style.display = 'none'; }, 700);
+    }, 800);
+  });
+
+  // ---- Search filter ----
   function filterSoftware() {
     const input = document.getElementById('search').value.toLowerCase();
     const cards = document.getElementsByClassName('software-card');
-
     for (let i = 0; i < cards.length; i++) {
       const title = cards[i].querySelector('h2').innerText.toLowerCase();
       const desc = cards[i].querySelector('p').innerText.toLowerCase();
@@ -190,6 +316,7 @@ bg-white dark:bg-black z-[9999] transition-opacity duration-700">
     }
   }
 
+  // ---- Dark mode ----
   function updateIcon() {
     const isDark = document.documentElement.classList.contains('dark');
     document.getElementById('icon-moon').classList.toggle('hidden', isDark);
@@ -198,90 +325,26 @@ bg-white dark:bg-black z-[9999] transition-opacity duration-700">
 
   function toggleDark() {
     const html = document.documentElement;
-
-    // animasi rotate
     document.getElementById('icon-moon').classList.add('rotate-180');
     document.getElementById('icon-sun').classList.add('rotate-180');
-
     setTimeout(() => {
       html.classList.toggle('dark');
       localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
       updateIcon();
-
       document.getElementById('icon-moon').classList.remove('rotate-180');
       document.getElementById('icon-sun').classList.remove('rotate-180');
     }, 200);
   }
 
-  // load awal
-  if (localStorage.getItem('theme') === 'dark') {
+  if (localStorage.getItem('theme') === 'dark' || !localStorage.getItem('theme')) {
     document.documentElement.classList.add('dark');
   }
-
   updateIcon();
-</script>
 
-<!-- FLOAT BUTTON -->
-<button onclick="toggleContact()" 
-  class="fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg z-50 transition transform hover:scale-110 active:scale-95">
-
-  <!-- Icon -->
-  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2">
-    <path d="M21 15a4 4 0 01-4 4H7l-4 4V7a4 4 0 014-4h10a4 4 0 014 4z"/>
-  </svg>
-</button>
-
-
-<!-- CHAT BUBBLE -->
-<div id="chatBubble" 
-  class="fixed bottom-24 right-6 bg-white dark:bg-gray-800 
-  text-gray-800 dark:text-white 
-  px-4 py-2 rounded-xl shadow-lg z-50
-
-  opacity-0 translate-y-3 pointer-events-none
-  transition-all duration-300">
-
-  <div class="flex items-center gap-2">
-    <span>Butuh bantuan? 💬</span>
-    <button onclick="closeBubble()" class="text-sm opacity-60 hover:opacity-100">✖</button>
-  </div>
-</div>
-
-
-<!-- CONTACT PANEL -->
-<div id="contactPanel" 
-  class="fixed bottom-24 right-6 w-72 
-  bg-white dark:bg-gray-800 
-  rounded-2xl shadow-xl p-4 z-50
-
-  opacity-0 translate-y-5 scale-95 pointer-events-none
-  transition-all duration-300 ease-out">
-
-  <h2 class="text-lg font-semibold mb-3 text-gray-800 dark:text-white">
-    Hubungi Admin
-  </h2>
-
-  <!-- WhatsApp -->
-  <a href="https://wa.me/6285218280685" target="_blank"
-    class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition">
-    <span class="text-green-500 text-xl">📱</span>
-    <span>WhatsApp</span>
-  </a>
-
-  <!-- Telegram -->
-  <!-- <a href="https://t.me/iptekunlock" target="_blank"
-    class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition">
-    <span class="text-blue-500 text-xl">✈️</span>
-    <span>Telegram</span>
-  </a> -->
-
-</div>
-
-<script>
+  // ---- Contact bubble/panel ----
   function toggleContact() {
     const panel = document.getElementById('contactPanel');
     closeBubble();
-
     if (panel.classList.contains('opacity-0')) {
       panel.classList.remove('opacity-0', 'translate-y-5', 'scale-95', 'pointer-events-none');
       panel.classList.add('opacity-100', 'translate-y-0', 'scale-100');
@@ -303,74 +366,65 @@ bg-white dark:bg-black z-[9999] transition-opacity duration-700">
     bubble.classList.remove('opacity-100', 'translate-y-0');
   }
 
-  // muncul otomatis
   setTimeout(showBubble, 2000);
-</script> 
 
-<script>
-  document.documentElement.classList.add('dark');
+  // ---- Login modal ----
+  function openLogin() {
+    const overlay = document.getElementById('loginOverlay');
+    const card = document.getElementById('loginCard');
+    overlay.classList.remove('opacity-0', 'pointer-events-none');
+    overlay.classList.add('opacity-100');
+    requestAnimationFrame(() => {
+      card.classList.remove('opacity-0', 'scale-95');
+      card.classList.add('opacity-100', 'scale-100');
+    });
+  }
+
+  function closeLogin() {
+    const overlay = document.getElementById('loginOverlay');
+    const card = document.getElementById('loginCard');
+    card.classList.add('opacity-0', 'scale-95');
+    card.classList.remove('opacity-100', 'scale-100');
+    overlay.classList.add('opacity-0');
+    overlay.classList.remove('opacity-100');
+    setTimeout(() => overlay.classList.add('pointer-events-none'), 300);
+  }
+
+  document.getElementById('loginOverlay').addEventListener('click', (e) => {
+    if (e.target.id === 'loginOverlay') closeLogin();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLogin();
+  });
+
+  function isValidEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+
+  document.getElementById('loginForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const emailInput = document.getElementById('loginEmail');
+    const passInput = document.getElementById('loginPassword');
+    const emailErr = emailInput.parentElement.querySelector('.error-msg');
+    const passErr = passInput.parentElement.querySelector('.error-msg');
+    const status = document.getElementById('loginStatus');
+
+    const emailOk = isValidEmail(emailInput.value);
+    const passOk = passInput.value.length >= 6;
+
+    emailErr.classList.toggle('hidden', emailOk);
+    emailInput.classList.toggle('border-red-500', !emailOk);
+    passErr.classList.toggle('hidden', passOk);
+    passInput.classList.toggle('border-red-500', !passOk);
+
+    if (emailOk && passOk) {
+      status.textContent = 'Memeriksa kredensial...';
+      status.classList.remove('text-red-500');
+      // TODO: ganti dengan pemanggilan API autentikasi sesungguhnya, contoh:
+      // fetch('/api/login', { method: 'POST', body: JSON.stringify({ email: emailInput.value, password: passInput.value }) })
+    } else {
+      status.textContent = '';
+    }
+  });
 </script>
-
-<meta name="description" content="Download tools iPhone & Android terbaik">
-
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trustpilot Button - Flexbox</title>
-    <style>
-        /* CONTAINER UNTUK MENGATUR POSISI */
-        .button-container {
-            display: flex;
-            margin-top: 20px; /* Jarak dari elemen di atasnya */
-            
-            /* SILAKAN PILIH SALAH SATU POSISI DI BAWAH INI: */
-            justify-content: center;     /* <--- Tombol di TENGAH */
-            /* justify-content: flex-start;  <--- Aktifkan ini jika ingin di KIRI */
-            /* justify-content: flex-end;    <--- Aktifkan ini jika ingin di KANAN */
-        }
-
-        /* STYLING TOMBOL */
-        .trustpilot-btn {
-            display: inline-flex;
-            align-items: center; /* Membuat teks & bintang sejajar sempurna secara vertikal */
-            gap: 8px;
-            padding: 10px 20px; /* Memperbaiki typo 10spx menjadi 10px */
-            background-color: #ffffff;
-            border: 2px solid #00b67a; 
-            border-radius: 4px;
-            text-decoration: none;
-            color: #000000;
-            font-family: Arial, sans-serif;
-            font-weight: bold;
-            font-size: 16px;
-            transition: all 0.2s ease;
-        }
-
-        .trustpilot-btn:hover {
-            background-color: #f4fbf8;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .tp-star {
-            color: #00b67a;
-            font-size: 20px;
-            line-height: 1;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="button-container">
-        <a href="https://www.trustpilot.com/review/pren.store" target="_blank" class="trustpilot-btn">
-            Review us on <span class="tp-star">★</span>Trustpilot
-        </a>
-    </div>
 
 </body>
 </html>
-
-<footer class="text-center py-6 mt-10 border-t border-gray-300 dark:border-gray-700 text-sm text-gray-600 dark:text-gray-400">
-  © 2026. All rights reserved By <span class="font-semibold">PREN CELL</span>
-</footer>
