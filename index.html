@@ -10,6 +10,30 @@
   <script>
     tailwind.config = { darkMode: 'class' }
   </script>
+
+  <!-- ====== SUPABASE ======
+       1. Buka https://supabase.com -> Sign up (gratis, tanpa kartu kredit) -> New project.
+       2. Setelah project jadi, buka menu kiri: Project Settings > API -> copy "Project URL" dan "anon public" key -> tempel di bawah ini.
+       3. Buka menu kiri: Authentication > Providers -> pastikan "Email" sudah aktif (biasanya aktif by default).
+       4. Buka menu kiri: SQL Editor -> jalankan SQL ini untuk bikin tabel profil user:
+
+         create table profiles (
+           id uuid references auth.users on delete cascade primary key,
+           name text,
+           whatsapp text,
+           created_at timestamp default now()
+         );
+         alter table profiles enable row level security;
+         create policy "Users can insert their own profile" on profiles for insert with check (auth.uid() = id);
+         create policy "Users can read their own profile" on profiles for select using (auth.uid() = id);
+  -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script>
+    const SUPABASE_URL = "https://bzltoaaqxumnahrktwul.supabase.co";
+    const SUPABASE_ANON_KEY = "sb_publishable_yXfLoh9GE3ysYfz22HKXxw_vwjsWST_";
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    const auth = supabaseClient.auth;
+  </script>
 </head>
 
 <body class="min-h-screen bg-gradient-to-br
@@ -56,6 +80,7 @@ bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500"></div>
 
     <div class="flex items-center gap-3">
       <!-- LOGIN BUTTON -->
+      <div id="loginBtnWrap" class="flex items-center gap-2">
       <button onclick="openLogin()"
         class="flex items-center gap-2 px-4 py-2 rounded-xl
         bg-white/70 dark:bg-gray-800/70 backdrop-blur-md
@@ -67,6 +92,7 @@ bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500"></div>
         </svg>
         Masuk
       </button>
+      </div>
 
       <!-- TOGGLE -->
       <button onclick="toggleDark()"
@@ -194,7 +220,7 @@ bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500"></div>
         </svg>
       </button>
     </div>
-    <p class="text-sm text-gray-500 dark:text-gray-400 mb-6">Akses khusus member PREN CELL.</p>
+    <p class="text-sm text-gray-500 dark:text-gray-400 mb-6">Akses khusus member PREN CELL. Belum punya akun? <a href="#" onclick="switchToRegister(event)" class="text-blue-600 dark:text-blue-400 font-medium hover:underline">Daftar di sini</a></p>
 
     <form id="loginForm" novalidate class="space-y-4">
       <div>
@@ -250,6 +276,102 @@ bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500"></div>
       hover:bg-gray-50 dark:hover:bg-gray-700 transition">
       📱 Hubungi Admin via WhatsApp
     </a>
+  </div>
+</div>
+
+<!-- ============ REGISTER MODAL ============ -->
+<div id="registerOverlay"
+  class="fixed inset-0 z-[200] flex items-center justify-center p-4
+  bg-black/50 backdrop-blur-sm
+  opacity-0 pointer-events-none transition-opacity duration-300">
+
+  <div id="registerCard"
+    class="w-full max-w-sm bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl
+    border border-white/20 dark:border-gray-700
+    rounded-2xl shadow-2xl p-7
+    scale-95 opacity-0 transition-all duration-300">
+
+    <div class="flex items-center justify-between mb-1">
+      <h2 class="text-xl font-bold text-gray-800 dark:text-white">Daftar Akun</h2>
+      <button onclick="closeRegister()" class="text-gray-400 hover:text-gray-700 dark:hover:text-white transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <p class="text-sm text-gray-500 dark:text-gray-400 mb-6">Sudah punya akun? <a href="#" onclick="switchToLogin(event)" class="text-blue-600 dark:text-blue-400 font-medium hover:underline">Masuk di sini</a></p>
+
+    <form id="registerForm" novalidate class="space-y-4">
+      <div>
+        <label class="block text-xs font-semibold uppercase tracking-wide text-gray-600 dark:text-gray-300 mb-1.5" for="regName">Nama Lengkap</label>
+        <input id="regName" type="text" placeholder="Nama kamu" autocomplete="name"
+          class="w-full px-3.5 py-2.5 rounded-xl text-sm
+          bg-white dark:bg-gray-800
+          border border-gray-300 dark:border-gray-700
+          text-gray-800 dark:text-white
+          focus:ring-2 focus:ring-blue-500 outline-none transition">
+        <p class="error-msg hidden text-xs text-red-500 mt-1">Nama wajib diisi.</p>
+      </div>
+
+      <div>
+        <label class="block text-xs font-semibold uppercase tracking-wide text-gray-600 dark:text-gray-300 mb-1.5" for="regEmail">Email</label>
+        <input id="regEmail" type="email" placeholder="nama@email.com" autocomplete="email"
+          class="w-full px-3.5 py-2.5 rounded-xl text-sm
+          bg-white dark:bg-gray-800
+          border border-gray-300 dark:border-gray-700
+          text-gray-800 dark:text-white
+          focus:ring-2 focus:ring-blue-500 outline-none transition">
+        <p class="error-msg hidden text-xs text-red-500 mt-1">Masukkan email yang valid.</p>
+      </div>
+
+      <div>
+        <label class="block text-xs font-semibold uppercase tracking-wide text-gray-600 dark:text-gray-300 mb-1.5" for="regWhatsapp">No. WhatsApp</label>
+        <input id="regWhatsapp" type="tel" placeholder="08xxxxxxxxxx" autocomplete="tel"
+          class="w-full px-3.5 py-2.5 rounded-xl text-sm
+          bg-white dark:bg-gray-800
+          border border-gray-300 dark:border-gray-700
+          text-gray-800 dark:text-white
+          focus:ring-2 focus:ring-blue-500 outline-none transition">
+        <p class="error-msg hidden text-xs text-red-500 mt-1">Masukkan nomor WhatsApp yang valid (min. 9 digit).</p>
+      </div>
+
+      <div>
+        <label class="block text-xs font-semibold uppercase tracking-wide text-gray-600 dark:text-gray-300 mb-1.5" for="regPassword">Kata Sandi</label>
+        <input id="regPassword" type="password" placeholder="••••••••" autocomplete="new-password"
+          class="w-full px-3.5 py-2.5 rounded-xl text-sm
+          bg-white dark:bg-gray-800
+          border border-gray-300 dark:border-gray-700
+          text-gray-800 dark:text-white
+          focus:ring-2 focus:ring-blue-500 outline-none transition">
+        <p class="error-msg hidden text-xs text-red-500 mt-1">Kata sandi minimal 6 karakter.</p>
+      </div>
+
+      <div>
+        <label class="block text-xs font-semibold uppercase tracking-wide text-gray-600 dark:text-gray-300 mb-1.5" for="regPasswordConfirm">Konfirmasi Kata Sandi</label>
+        <input id="regPasswordConfirm" type="password" placeholder="••••••••" autocomplete="new-password"
+          class="w-full px-3.5 py-2.5 rounded-xl text-sm
+          bg-white dark:bg-gray-800
+          border border-gray-300 dark:border-gray-700
+          text-gray-800 dark:text-white
+          focus:ring-2 focus:ring-blue-500 outline-none transition">
+        <p class="error-msg hidden text-xs text-red-500 mt-1">Kata sandi tidak cocok.</p>
+      </div>
+
+      <label class="flex items-start gap-2 text-xs text-gray-600 dark:text-gray-300">
+        <input id="regTerms" type="checkbox" class="accent-blue-600 mt-0.5">
+        Saya setuju dengan syarat & ketentuan PREN CELL.
+      </label>
+      <p id="termsError" class="error-msg hidden text-xs text-red-500 -mt-2">Kamu harus menyetujui syarat & ketentuan.</p>
+
+      <button type="submit"
+        class="w-full py-2.5 rounded-xl text-sm font-semibold text-white
+        bg-gradient-to-r from-blue-600 to-purple-500
+        hover:opacity-90 transition">
+        Buat Akun
+      </button>
+
+      <p id="registerStatus" class="text-xs text-center min-h-[16px] text-gray-500 dark:text-gray-400"></p>
+    </form>
   </div>
 </div>
 
@@ -393,8 +515,124 @@ bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500"></div>
   document.getElementById('loginOverlay').addEventListener('click', (e) => {
     if (e.target.id === 'loginOverlay') closeLogin();
   });
+  document.getElementById('registerOverlay').addEventListener('click', (e) => {
+    if (e.target.id === 'registerOverlay') closeRegister();
+  });
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeLogin();
+    if (e.key === 'Escape') { closeLogin(); closeRegister(); }
+  });
+
+  // ---- Register modal ----
+  function openRegister() {
+    const overlay = document.getElementById('registerOverlay');
+    const card = document.getElementById('registerCard');
+    overlay.classList.remove('opacity-0', 'pointer-events-none');
+    overlay.classList.add('opacity-100');
+    requestAnimationFrame(() => {
+      card.classList.remove('opacity-0', 'scale-95');
+      card.classList.add('opacity-100', 'scale-100');
+    });
+  }
+
+  function closeRegister() {
+    const overlay = document.getElementById('registerOverlay');
+    const card = document.getElementById('registerCard');
+    card.classList.add('opacity-0', 'scale-95');
+    card.classList.remove('opacity-100', 'scale-100');
+    overlay.classList.add('opacity-0');
+    overlay.classList.remove('opacity-100');
+    setTimeout(() => overlay.classList.add('pointer-events-none'), 300);
+  }
+
+  function switchToRegister(e) {
+    e.preventDefault();
+    closeLogin();
+    setTimeout(openRegister, 150);
+  }
+
+  function switchToLogin(e) {
+    e.preventDefault();
+    closeRegister();
+    setTimeout(openLogin, 150);
+  }
+
+  document.getElementById('registerForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('regName');
+    const email = document.getElementById('regEmail');
+    const wa = document.getElementById('regWhatsapp');
+    const pass = document.getElementById('regPassword');
+    const passConfirm = document.getElementById('regPasswordConfirm');
+    const terms = document.getElementById('regTerms');
+    const status = document.getElementById('registerStatus');
+
+    const setField = (input, ok) => {
+      input.parentElement.querySelector('.error-msg').classList.toggle('hidden', ok);
+      input.classList.toggle('border-red-500', !ok);
+    };
+
+    const nameOk = name.value.trim().length >= 2;
+    const emailOk = isValidEmail(email.value);
+    const waOk = wa.value.replace(/\D/g,'').length >= 9;
+    const passOk = pass.value.length >= 6;
+    const confirmOk = passConfirm.value === pass.value && passConfirm.value.length > 0;
+    const termsOk = terms.checked;
+
+    setField(name, nameOk);
+    setField(email, emailOk);
+    setField(wa, waOk);
+    setField(pass, passOk);
+    setField(passConfirm, confirmOk);
+    document.getElementById('termsError').classList.toggle('hidden', termsOk);
+
+    if (nameOk && emailOk && waOk && passOk && confirmOk && termsOk) {
+      const submitBtn = e.target.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.classList.add('opacity-60');
+      status.textContent = 'Mendaftarkan akun...';
+      status.classList.remove('text-red-500');
+
+      auth.signUp({
+        email: email.value.trim(),
+        password: pass.value
+      }).then(({ data, error }) => {
+        if (error) throw error;
+        const user = data.user;
+        if (!user) {
+          // Email confirmation aktif: belum ada session, profil disimpan setelah user verifikasi & login pertama kali.
+          return { skippedProfile: true };
+        }
+        return supabaseClient.from('profiles').insert({
+          id: user.id,
+          name: name.value.trim(),
+          whatsapp: wa.value.trim()
+        });
+      }).then((result) => {
+        if (result && result.error) throw result.error;
+        status.textContent = 'Akun berhasil dibuat! Mengalihkan...';
+        status.classList.remove('text-red-500');
+        status.classList.add('text-green-600');
+        setTimeout(() => {
+          closeRegister();
+          e.target.reset();
+          status.textContent = '';
+          status.classList.remove('text-green-600');
+        }, 1200);
+      }).catch((err) => {
+        const messages = {
+          'User already registered': 'Email ini sudah terdaftar. Coba masuk saja.',
+          'Password should be at least 6 characters': 'Kata sandi minimal 6 karakter.',
+          'Unable to validate email address: invalid format': 'Format email tidak valid.'
+        };
+        status.textContent = messages[err.message] || ('Gagal mendaftar: ' + err.message);
+        status.classList.add('text-red-500');
+      }).finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('opacity-60');
+      });
+    } else {
+      status.textContent = '';
+    }
   });
 
   function isValidEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
@@ -416,12 +654,59 @@ bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500"></div>
     passInput.classList.toggle('border-red-500', !passOk);
 
     if (emailOk && passOk) {
+      const submitBtn = e.target.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.classList.add('opacity-60');
       status.textContent = 'Memeriksa kredensial...';
       status.classList.remove('text-red-500');
-      // TODO: ganti dengan pemanggilan API autentikasi sesungguhnya, contoh:
-      // fetch('/api/login', { method: 'POST', body: JSON.stringify({ email: emailInput.value, password: passInput.value }) })
+
+      auth.signInWithPassword({
+        email: emailInput.value.trim(),
+        password: passInput.value
+      }).then(({ data, error }) => {
+        if (error) throw error;
+        status.textContent = 'Berhasil masuk!';
+        status.classList.remove('text-red-500');
+        status.classList.add('text-green-600');
+        setTimeout(() => {
+          closeLogin();
+          e.target.reset();
+          status.textContent = '';
+          status.classList.remove('text-green-600');
+        }, 800);
+      }).catch((err) => {
+        const messages = {
+          'Invalid login credentials': 'Email atau kata sandi salah.',
+          'Email not confirmed': 'Email belum diverifikasi. Cek inbox/spam kamu untuk link verifikasi.'
+        };
+        status.textContent = messages[err.message] || ('Gagal masuk: ' + err.message);
+        status.classList.add('text-red-500');
+      }).finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('opacity-60');
+      });
     } else {
       status.textContent = '';
+    }
+  });
+
+  // ---- Status login user (ganti tombol "Masuk" jadi nama + logout) ----
+  auth.onAuthStateChange((_event, session) => {
+    const loginBtn = document.getElementById('loginBtnWrap');
+    if (!loginBtn) return;
+    const user = session ? session.user : null;
+    if (user) {
+      loginBtn.innerHTML = `
+        <span class="text-sm text-gray-700 dark:text-gray-200 hidden sm:inline">${user.email}</span>
+        <button onclick="auth.signOut()" class="px-3 py-2 rounded-xl text-sm font-medium bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-gray-300 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-700 transition text-gray-800 dark:text-white">Keluar</button>
+      `;
+    } else {
+      loginBtn.innerHTML = `
+        <button onclick="openLogin()" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-gray-300 dark:border-gray-700 text-sm font-medium text-gray-800 dark:text-white hover:bg-white dark:hover:bg-gray-700 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16l4-4m0 0l-4-4m4 4H7m6 8a8 8 0 110-16 8 8 0 010 16z"/></svg>
+          Masuk
+        </button>
+      `;
     }
   });
 </script>
